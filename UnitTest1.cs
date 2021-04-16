@@ -24,7 +24,8 @@ namespace AmazonItem
             driver.FindElement(By.Id("nav-search-submit-button")).Submit();
             ITakesScreenshot takesScreenshot = driver as ITakesScreenshot;
             Screenshot screenshot = takesScreenshot.GetScreenshot();
-            screenshot.SaveAsFile(@"D:\MyCode\AmazonItem\0Screenshots\"+ DateTime.Now.Millisecond+ ".png", ScreenshotImageFormat.Png);
+            string datetime = DateTime.Now.ToString("ddMMyyyy_HH_mm_ss.fff");
+            screenshot.SaveAsFile(@"D:\MyCode\AmazonItem\0Screenshots\"+ datetime  + ".png", ScreenshotImageFormat.Png);
             Assert.Pass();
         }
 
