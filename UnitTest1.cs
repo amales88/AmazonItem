@@ -26,13 +26,16 @@ namespace AmazonItem
             Screenshot screenshot = takesScreenshot.GetScreenshot();
             string datetime = DateTime.Now.ToString("ddMMyyyy_HH_mm_ss.fff");
             screenshot.SaveAsFile(@"D:\MyCode\AmazonItem\0Screenshots\"+ datetime  + ".png", ScreenshotImageFormat.Png);
+           IWebElement btn =  driver.FindElement(By.Id("nav-search-submit-button"));
+            //IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            //js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
             Assert.Pass();
         }
 
         [TearDown]
         public void Quit()
         {
-            driver.Quit();
+           // driver.Quit();
 
         }
     }
